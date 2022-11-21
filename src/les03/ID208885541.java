@@ -3,7 +3,8 @@ package les03;
 import java.util.Scanner;
 class Main{
     public static void main(String[] args) {
-       ID208885541.testStr();
+//       ID208885541.testStr();
+        ID208885541.opesetNum();
     }
 }
 
@@ -15,7 +16,7 @@ public class ID208885541 {
         int sumPazetevNum = 0;
         int numScannd = 0;
         int sumEqrelNum = 0;
-        while (num1 / num2 != -1) {
+        while ((float)num1 / num2 != -1) {
             num1 = in.nextInt();
             num2 = in.nextInt();
             numScannd += 2;

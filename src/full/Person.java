@@ -1,14 +1,32 @@
 package full;
 
-public class Person {
-    double age;
-    String name;
+import java.time.LocalDateTime;
 
-    public Person(double age, String name) {
-        this.age = age;
-        this.name = name;
+public abstract class Person implements AcademicType {
+       private static Long idCounter = 0L;
+       private String name;
+       private double age;
+       private Long identificationNumber;
+       private LocalDateTime creationTime;
+
+    public Long getIdentificationNumber() {
+        return identificationNumber;
     }
 
+    public abstract Long getId();
+
+
+        static Long incrementAndGet(){
+            idCounter = idCounter + 1;
+            return idCounter;
+        }
+
+    public Person(String name, double age) {
+            this.name = name;
+            this.age = age;
+            this.identificationNumber = incrementAndGet();
+            this.creationTime = LocalDateTime.now();
+        }
     public String getName() {
         return name;
     }
@@ -24,4 +42,5 @@ public class Person {
     public void setAge(double age) {
         this.age = age;
     }
+
 }
